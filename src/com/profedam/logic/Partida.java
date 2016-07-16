@@ -5,20 +5,30 @@ package com.profedam.logic;
  */
 public class Partida {
 
-    Dau dau;
-    Jugador[] llistaJugadors;
+    private Dau dau;
+    private Jugador[] llistaJugadors;
 
     public Partida(Dau dau, Jugador[] llistaJugadors) {
         this.dau = dau;
         this.llistaJugadors = llistaJugadors;
     }
 
-    public void jugarPartida()
-    {
-        for (jugador: llistaJugadors)
-        {
-
+    public void jugarPartida() {
+        for (Jugador jugador : llistaJugadors) {
+            jugador.setPuntuacio(dau.tirarDau());
+            System.out.println("El jugador " + jugador.getNomJugador() + " ha obtingut un " + jugador.getPuntuacio());
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+        public void esGuanyador()
+    {
+        //TO DO  cal determinar qui es el guanyador
+    }
 
     }
-}
+

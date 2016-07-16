@@ -7,6 +7,7 @@ public class Jugador {
 
     private String nomJugador;
     private int numJugador;
+    private int puntuacio;
 
     public Jugador(int numJugador, String nomJugador) {
         this.nomJugador = nomJugador;
@@ -15,6 +16,14 @@ public class Jugador {
 
     public String getNomJugador() {
         return nomJugador;
+    }
+
+    public int getPuntuacio() {
+        return puntuacio;
+    }
+
+    public void setPuntuacio(int puntuacio) {
+        this.puntuacio = puntuacio;
     }
 
     public void setNomJugador(String nomJugador) {
@@ -29,4 +38,4 @@ public class Jugador {
         this.numJugador = numJugador;
     }
 }
-}
+
