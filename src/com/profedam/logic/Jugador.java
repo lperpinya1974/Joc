@@ -41,5 +41,10 @@ public class Jugador {
     public void setNumJugador(int numJugador) {
         this.numJugador = numJugador;
     }
+
+    public void  imprimirJugador()
+    {
+       System.out.println ("El jugador " + this.getNomJugador() + "Ha tret un " + this.getPuntuacio());
+    }
 }
 

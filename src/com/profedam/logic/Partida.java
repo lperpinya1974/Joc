@@ -6,7 +6,7 @@ package com.profedam.logic;
 public class Partida {
 
     private Dau dau;
-    private Jugador[] llistaJugadors;
+    private Jugador[] llistaJugadors, llistaGuanyadors;
 
     public Partida(Dau dau, Jugador[] llistaJugadors) {
         this.dau = dau;
@@ -16,33 +16,65 @@ public class Partida {
     public void jugarPartida() {
         for (Jugador jugador : llistaJugadors) {
             jugador.setPuntuacio(dau.tirarDau());
-            System.out.println("El jugador " + jugador.getNomJugador() + " ha obtingut un " + jugador.getPuntuacio());
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
         }
     }
 
-        public Jugador esGuanyador() {
-            Jugador guanyador = new Jugador();
+        public void calculaGuanyador() {
 
-            //TO DO  cal determinar qui es el guanyador
+            llistaGuanyadors = new Jugador[this.llistaJugadors.length];
+            int numGuanyador = 0;
+            int puntuacioMaxima = 0;
+
+
+
+
             for (Jugador jugador : llistaJugadors) {
 
-                if (jugador.getPuntuacio() > guanyador.getPuntuacio()) {
-                    guanyador = jugador;
-                }
+                if (jugador.getPuntuacio() > puntuacioMaxima) {
+                    puntuacioMaxima = jugador.getPuntuacio();
+                  }
 
             }
+            for (Jugador jugador: llistaJugadors) {
 
-            return guanyador;
+                if (jugador.getPuntuacio() == puntuacioMaxima)
+                    llistaGuanyadors[numGuanyador] = jugador;
+                numGuanyador++;
+            }
+
         }
 
-        /*
-         TODO només estem suposant un guanyador!! estic provant com funciona el commit sobre un projecte que s'ha fet el checkout previament
-         */
+        public void imprimirJugadors ()
+        {
+            for (Jugador jugador: llistaJugadors)
+            {
+                jugador.imprimirJugador();
+
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        public void imprimirGuanyadors ()
+        {
+
+            //Sempre dona error al imprimir cal arreglar-ho!!
+            if (llistaGuanyadors.length > 1)
+
+                System.out.println ("Els guanyadors han estat");
+
+            else
+                System.out.println ("El guanyador ha estat");
+
+            for (Jugador jugador: llistaGuanyadors)
+            {
+               System.out.println (jugador.getNomJugador());
+            }
+        }
 
 
     }
