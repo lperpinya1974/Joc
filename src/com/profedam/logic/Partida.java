@@ -25,10 +25,27 @@ public class Partida {
         }
     }
 
-        public void esGuanyador()
-    {
-        //TO DO  cal determinar qui es el guanyador
-    }
+        public Jugador esGuanyador() {
+            Jugador guanyador = new Jugador();
+
+            //TO DO  cal determinar qui es el guanyador
+            for (Jugador jugador : llistaJugadors) {
+
+                if (jugador.getPuntuacio() > guanyador.getPuntuacio()) {
+                    guanyador = jugador;
+                }
+
+            }
+
+            return guanyador;
+        }
+
+        /*
+         TODO només estem suposant un guanyador!! estic provant com funciona el commit sobre un projecte que s'ha fet el checkout previament
+         */
+
 
     }
+
+
 

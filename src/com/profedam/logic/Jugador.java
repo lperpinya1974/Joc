@@ -6,6 +6,10 @@ package com.profedam.logic;
 public class Jugador {
 
     private String nomJugador;
+
+    public Jugador() {
+    }
+
     private int numJugador;
     private int puntuacio;
 
