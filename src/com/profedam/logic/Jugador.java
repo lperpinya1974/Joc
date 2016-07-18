@@ -3,19 +3,17 @@ package com.profedam.logic;
 /**
  * Created by Lluis_2 on 16/07/2016.
  */
-public class Jugador {
+public class Jugador implements Comparable  {
 
     private String nomJugador;
 
     public Jugador() {
     }
 
-    private int numJugador;
     private int puntuacio;
 
     public Jugador(int numJugador, String nomJugador) {
         this.nomJugador = nomJugador;
-        this.numJugador = numJugador;
     }
 
     public String getNomJugador() {
@@ -34,17 +32,26 @@ public class Jugador {
         this.nomJugador = nomJugador;
     }
 
-    public int getNumJugador() {
-        return numJugador;
-    }
-
-    public void setNumJugador(int numJugador) {
-        this.numJugador = numJugador;
-    }
-
     public void  imprimirJugador()
     {
-       System.out.println ("El jugador " + this.getNomJugador() + "Ha tret un " + this.getPuntuacio());
+       System.out.println (this.getNomJugador());
+    }
+
+    public void imprimirPuntuacio()
+    {
+        System.out.println ("El jugador " + this.getNomJugador() + " ha tret un " + this.getPuntuacio());
+    }
+
+
+
+    @Override
+    public int compareTo(Object o) {
+
+        Jugador jugadorComparable = (Jugador) o;
+
+        return this.getPuntuacio()> jugadorComparable.getPuntuacio()? -1: 1;
+
+
     }
 }
 
