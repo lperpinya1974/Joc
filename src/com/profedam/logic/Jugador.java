@@ -32,15 +32,8 @@ public class Jugador implements Comparable  {
         this.nomJugador = nomJugador;
     }
 
-    public void  imprimirJugador()
-    {
-       System.out.println (this.getNomJugador());
-    }
 
-    public void imprimirPuntuacio()
-    {
-        System.out.println ("El jugador " + this.getNomJugador() + " ha tret un " + this.getPuntuacio());
-    }
+
 
 
 

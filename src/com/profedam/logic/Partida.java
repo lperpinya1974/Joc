@@ -10,7 +10,8 @@ public class Partida {
 
     private Dau dau;
     private ArrayList<Jugador> llistaJugadors;
-    ArrayList <Jugador>  prova;
+    private ArrayList<Jugador> llistaGuanyadors;
+    ArrayList<Jugador> prova;
 
     public Partida(Dau dau, ArrayList<Jugador> llistaJugadors) {
         this.dau = dau;
@@ -19,53 +20,43 @@ public class Partida {
 
     public void jugarPartida() {
         for (Jugador jugador : llistaJugadors) {
-            jugador.setPuntuacio(dau.tirarDau());
+            jugador.setPuntuacio (dau.tirarDau ( ));
 
         }
     }
 
-        public void calculaGuanyador() {
+    public void calculaGuanyador() {
 
-           Collections.sort(llistaJugadors);
+        llistaGuanyadors = new ArrayList();
+        Collections.sort (llistaJugadors);
+        int puntuacioMaxima = llistaJugadors.get (0).getPuntuacio ( );
 
-
-           }
-
-
-
-
-        public void imprimirJugadors ()
-        {
-            for (Jugador jugador: llistaJugadors)
-            {
-                jugador.imprimirPuntuacio();
-
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+        for (Jugador jugador : llistaJugadors) {
+            if (jugador.getPuntuacio ( ) == puntuacioMaxima) llistaGuanyadors.add (jugador);
         }
-
-        public void imprimirGuanyadors ()
-        {
-                  int puntuacioMaxima = llistaJugadors.get(0).getPuntuacio();
-
-
-            System.out.println ("El guanyador ha estat");
-            for (Jugador jugador: llistaJugadors)
-            {
-                if ( jugador.getPuntuacio()!=puntuacioMaxima) break;
-                jugador.imprimirJugador();
-
-            }
-
-
-        }
-
 
     }
+
+    public ArrayList<Jugador> getLlistaJugadors() {
+        return llistaJugadors;
+    }
+
+    public void setLlistaJugadors(ArrayList<Jugador> llistaJugadors) {
+        this.llistaJugadors = llistaJugadors;
+    }
+
+    public ArrayList<Jugador> getLlistaGuanyadors() {
+        return llistaGuanyadors;
+    }
+
+    public void setLlistaGuanyadors(ArrayList<Jugador> llistaGuanyadors) {
+        this.llistaGuanyadors = llistaGuanyadors;
+    }
+}
+
+
+
+
 
 
 
