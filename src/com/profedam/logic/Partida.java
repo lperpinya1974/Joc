@@ -18,7 +18,7 @@ public class Partida {
         this.llistaJugadors = llistaJugadors;
     }
 
-    public void jugarPartida() {
+    public void tirarDaus() {
         for (Jugador jugador : llistaJugadors) {
             jugador.setPuntuacio (dau.tirarDau ( ));
 

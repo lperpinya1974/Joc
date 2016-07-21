@@ -1,4 +1,4 @@
-package com.profedam.vista;
+package com.profedam.vistatext;
 
 import com.profedam.logic.Jugador;
 

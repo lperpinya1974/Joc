@@ -3,9 +3,7 @@ package com.profedam.controlador;
 import com.profedam.logic.Dau;
 import com.profedam.logic.Jugador;
 import com.profedam.logic.Partida;
-import com.profedam.vista.Entrada;
-import com.profedam.vista.Sortida;
-import com.profedam.vista.Vista;
+import com.profedam.vistatext.Vista;
 
 import java.util.ArrayList;
 
@@ -38,7 +36,7 @@ public class GestorPartida {
     public void jugar()
     {
         partida.setLlistaJugadors(vista.introduirJugadors ());
-        partida.jugarPartida();
+        partida.tirarDaus ();
         vista.imprimirJugadors(partida.getLlistaJugadors());
         partida.calculaGuanyador();
         vista.imprimirGuanyadors(partida.getLlistaJugadors());

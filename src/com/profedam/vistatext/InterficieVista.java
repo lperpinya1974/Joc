@@ -1,6 +1,5 @@
-package com.profedam.vista;
+package com.profedam.vistatext;
 
-import com.profedam.controlador.GestorPartida;
 import com.profedam.logic.Jugador;
 
 import java.util.ArrayList;
