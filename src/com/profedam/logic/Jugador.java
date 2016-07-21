@@ -12,7 +12,7 @@ public class Jugador implements Comparable  {
 
     private int puntuacio;
 
-    public Jugador(int numJugador, String nomJugador) {
+    public Jugador(String nomJugador) {
         this.nomJugador = nomJugador;
     }
 
